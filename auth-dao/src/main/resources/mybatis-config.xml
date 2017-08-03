@@ -12,4 +12,7 @@
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="com/hzit/dao/ResourcesDao.xml"></mapper>
+    </mappers>
 </configuration>

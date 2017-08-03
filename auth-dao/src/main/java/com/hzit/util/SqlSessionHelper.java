@@ -17,7 +17,7 @@ public class SqlSessionHelper {
 	static{
 		Reader r;
 		try {
-			r = Resources.getResourceAsReader("mybatis.xml");
+			r = Resources.getResourceAsReader("mybatis-config.xml");
 
 			log.debug("读取配置文件成功");
 			factory=new SqlSessionFactoryBuilder().build(r);
@@ -28,7 +28,8 @@ public class SqlSessionHelper {
 		}
 	}
 	public static SqlSession getSqlSession(){
-		session=factory.openSession();
+		if(session==null )
+			session=factory.openSession();
 		log.debug("获取了session对象");
 		return session;
 	}

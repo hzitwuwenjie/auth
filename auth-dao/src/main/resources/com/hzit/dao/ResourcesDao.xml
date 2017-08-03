@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzit.dao.ResourcesDao">
+    <select id="findResourcesByUser" parameterType="int"
+            resultType="com.hzit.entity.Resources">
+
+SELECT * FROM resourcces
+WHERE rid IN (SELECT resourceid FROM `roleresource` WHERE roleid IN (SELECT  rid FROM urinfo WHERE uid=#{uid}  ) )
+    </select>
+</mapper>
