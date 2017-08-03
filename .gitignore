@@ -2,3 +2,4 @@
 /.idea/
 *.iml
 /auth-dao/target/
+/auth-web/target/
