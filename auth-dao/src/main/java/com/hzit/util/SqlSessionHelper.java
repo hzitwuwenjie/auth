@@ -1,4 +1,4 @@
-package dao;
+package com.hzit.util;
 
 import java.io.IOException;
 import java.io.Reader;
