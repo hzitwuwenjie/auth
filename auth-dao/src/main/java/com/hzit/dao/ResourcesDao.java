@@ -21,6 +21,8 @@ public interface ResourcesDao {
 
         public int savesResources(Resources resources);
 
+        public List<Resources> findFirstResources( );
+
 
 
 
