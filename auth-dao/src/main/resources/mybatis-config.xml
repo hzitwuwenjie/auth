@@ -3,6 +3,7 @@
 <configuration>
     <typeAliases>
         <typeAlias type="com.hzit.entity.UserInfo" alias="UserInfo"/>
+        <typeAlias type="com.hzit.entity.RoleInfo" alias="RoleInfo"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -18,5 +19,6 @@
     <mappers>
         <mapper resource="com/hzit/dao/ResourcesDao.xml"></mapper>
         <mapper resource="com/hzit/dao/UserInfoDao.xml"></mapper>
+        <mapper resource="com/hzit/dao/RoleInfoDao.xml"></mapper>
     </mappers>
 </configuration>
