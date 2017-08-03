@@ -1,4 +1,5 @@
 import com.hzit.dao.ResourcesDao;
+import com.hzit.entity.Resources;
 import com.hzit.util.SqlSessionHelper;
 
 /**
@@ -15,10 +16,6 @@ import com.hzit.util.SqlSessionHelper;
 public class TestResources {
 
     public static void main(String[] args) {
-        ResourcesDao dao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
-
-        dao.findResourcesByUser(1);
-
-
+        ResourcesDao dao = SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
     }
 }

@@ -7,4 +7,8 @@
 SELECT * FROM resourcces
 WHERE rid IN (SELECT resourceid FROM `roleresource` WHERE roleid IN (SELECT  rid FROM urinfo WHERE uid=#{uid}  ) )
     </select>
+
+    <insert id="savesResources" parameterType="com.hzit.entity.Resources">
+    INSERT INTO resourcces values(null,#{rname},#{resurl},#{resorderno},#{redsdes},sysdate(),sysdate(),#{createMan},#{updateMan},#{parentId} )
+    </insert>
 </mapper>

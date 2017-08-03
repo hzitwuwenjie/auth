@@ -19,6 +19,8 @@ public interface ResourcesDao {
 
         public List<Resources> findResourcesByUser(int userid);
 
+        public int savesResources(Resources resources);
+
 
 
 
