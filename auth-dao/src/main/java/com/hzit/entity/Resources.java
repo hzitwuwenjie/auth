@@ -13,6 +13,7 @@ package com.hzit.entity;
  */
 public class Resources {
     private int rid;
+    private String rname;
     private String resurl;
     private String resorderno;
     private String redsdes;
@@ -21,6 +22,14 @@ public class Resources {
     private String createMan;
     private String updateMan;
     private String parentId;
+
+    public String getRname() {
+        return rname;
+    }
+
+    public void setRname(String rname) {
+        this.rname = rname;
+    }
 
     public int getRid() {
         return rid;

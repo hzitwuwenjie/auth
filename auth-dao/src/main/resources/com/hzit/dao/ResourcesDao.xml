@@ -3,8 +3,15 @@
 <mapper namespace="com.hzit.dao.ResourcesDao">
     <select id="findResourcesByUser" parameterType="int"
             resultType="com.hzit.entity.Resources">
-
 SELECT * FROM resourcces
 WHERE rid IN (SELECT resourceid FROM `roleresource` WHERE roleid IN (SELECT  rid FROM urinfo WHERE uid=#{uid}  ) )
+    </select>
+
+    <insert id="savesResources" parameterType="com.hzit.entity.Resources">
+    INSERT INTO resourcces values(null,#{rname},#{resurl},#{resorderno},#{redsdes},sysdate(),sysdate(),#{createMan},#{updateMan},#{parentId} )
+    </insert>
+
+    <select id="findFirstResources" parameterType="com.hzit.entity.Resources">
+      SELECT * FROM resourcces WHERE parentId is NULL
     </select>
 </mapper>

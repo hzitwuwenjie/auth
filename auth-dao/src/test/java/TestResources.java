@@ -1,5 +1,8 @@
 import com.hzit.dao.ResourcesDao;
+import com.hzit.entity.Resources;
 import com.hzit.util.SqlSessionHelper;
+
+import java.util.List;
 
 /**
  * 　　  　  　           \\\|///
@@ -15,10 +18,11 @@ import com.hzit.util.SqlSessionHelper;
 public class TestResources {
 
     public static void main(String[] args) {
-        ResourcesDao dao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+        ResourcesDao dao = SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
 
-        dao.findResourcesByUser(1);
-
-
+        List<Resources> list= dao.findFirstResources();
+        for (Resources rs : list){
+            System.out.println(rs.getRname());
+        }
     }
 }
