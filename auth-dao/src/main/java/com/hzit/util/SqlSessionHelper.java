@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
-//Ð´Ò»¸ö²úÉúSqlSessionµÄ¹¤¾ßÀà
+//Ð´Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SqlSessionï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 public class SqlSessionHelper {
 	private static SqlSession session;
 	private static SqlSessionFactory factory;
@@ -17,20 +17,19 @@ public class SqlSessionHelper {
 	static{
 		Reader r;
 		try {
-			r = Resources.getResourceAsReader("mybatis-config.xml");
+			r = Resources.getResourceAsReader("mybatis.xml");
 
-			log.debug("¶ÁÈ¡ÅäÖÃÎÄ¼þ³É¹¦");
+			log.debug("ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½");
 			factory=new SqlSessionFactoryBuilder().build(r);
-			log.debug("Sqlsession¹¤³§´´½¨³É¹¦");
+			log.debug("Sqlsessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	public static SqlSession getSqlSession(){
-		if(session==null )
-			session=factory.openSession();
-		log.debug("»ñÈ¡ÁËsession¶ÔÏó");
+		session=factory.openSession();
+		log.debug("ï¿½ï¿½È¡ï¿½ï¿½sessionï¿½ï¿½ï¿½ï¿½");
 		return session;
 	}
 }
