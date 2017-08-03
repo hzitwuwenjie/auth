@@ -17,5 +17,6 @@
     </environments>
     <mappers>
         <mapper resource="com/hzit/dao/ResourcesDao.xml"></mapper>
+        <mapper resource="com/hzit/dao/UserInfoDao.xml"></mapper>
     </mappers>
 </configuration>
