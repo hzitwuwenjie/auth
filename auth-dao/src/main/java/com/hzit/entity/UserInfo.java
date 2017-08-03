@@ -8,6 +8,7 @@ public class UserInfo {
     private String uName;
     private String uPass;
     private String uStatus;
+    private String createTime;
 
     public String getuStatus() {
         return uStatus;
@@ -41,6 +42,14 @@ public class UserInfo {
         this.uPass = uPass;
     }
 
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
@@ -48,6 +57,7 @@ public class UserInfo {
                 ", uName='" + uName + '\'' +
                 ", uPass='" + uPass + '\'' +
                 ", uStatus='" + uStatus + '\'' +
+                ", createTime='" + createTime + '\'' +
                 '}';
     }
 }

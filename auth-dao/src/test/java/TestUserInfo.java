@@ -3,6 +3,8 @@ import com.hzit.entity.UserInfo;
 import com.hzit.util.SqlSessionHelper;
 import org.apache.ibatis.session.SqlSession;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,12 +33,17 @@ public class TestUserInfo {
 
         // 增加用户
 
-        /*
+
+/*
             UserInfo user=new UserInfo();
             user.setuId(null);
             user.setuName("吴剑");
             user.setuPass("helloworld");
             user.setuStatus("1");
+            Date date=new Date();
+            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+            String createTime=simpleDateFormat.format(date);
+            user.setCreateTime(createTime);
                 int i=userInfoDao.addUser(user);
             if (i==1){
                 sqlSession.commit();
@@ -45,13 +52,14 @@ public class TestUserInfo {
                 sqlSession.rollback();
                 System.out.println("添加失败");
             }
-         */
+*/
 
         //修改用户
-        /*
+/*
             UserInfo user=new UserInfo();
             user.setuName("周司机");
-
+            user.setuPass("hehehehe");
+            user.setuStatus("0");
             user.setuId(3);
             int i=userInfoDao.updateUser(user);
             if (i==1){
@@ -61,10 +69,9 @@ public class TestUserInfo {
                 sqlSession.rollback();
                 System.out.println("修改失败");
             }
-         */
+*/
 
         // 删除用户
-        /*
             int i=userInfoDao.deleteUser(3);
             if (i==1){
                 sqlSession.commit();
@@ -73,6 +80,5 @@ public class TestUserInfo {
                 sqlSession.rollback();
                 System.out.println("删除失败");
             }
-         */
     }
 }

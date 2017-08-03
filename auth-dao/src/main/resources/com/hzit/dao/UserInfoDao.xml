@@ -9,6 +9,7 @@
         <result property="uName" column="uname"/>
         <result property="uPass" column="upass"/>
         <result property="uStatus" column="ustatus"/>
+        <result property="createTime" column="createTime"/>
     </resultMap>
     <select id="findUserById" resultMap="userInfoMap" parameterType="UserInfo">
         SELECT * from userInfo
@@ -23,7 +24,7 @@
         SELECT * from userInfo limit #{0},#{1}
     </select>
     <insert id="addUser" parameterType="UserInfo" >
-        INSERT INTO userInfo VALUES (#{uId},#{uName},#{uPass},#{uStatus})
+        INSERT INTO userInfo VALUES (#{uId},#{uName},#{uPass},#{uStatus},sysdate())
     </insert>
     <update id="updateUser" parameterType="UserInfo">
         UPDATE userInfo
@@ -36,6 +37,9 @@
             </if>
             <if test="uStatus !=null">
                 ustatus=#{uStatus},
+            </if>
+            <if test="createTime !=null">
+                createTime=#{createTime}
             </if>
         </set>
         where uid=#{uId}
