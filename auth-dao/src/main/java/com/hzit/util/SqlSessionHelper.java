@@ -1,4 +1,4 @@
-package com.hzit.util;
+package dao;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
-//дһ������SqlSession�Ĺ�����
+//写一个产生SqlSession的工具类
 public class SqlSessionHelper {
 	private static SqlSession session;
 	private static SqlSessionFactory factory;
@@ -17,11 +17,11 @@ public class SqlSessionHelper {
 	static{
 		Reader r;
 		try {
-			r = Resources.getResourceAsReader("mybatis.xml");
+			r = Resources.getResourceAsReader("mybatis-config.xml");
 
-			log.debug("��ȡ�����ļ��ɹ�");
+			log.debug("读取配置文件成功");
 			factory=new SqlSessionFactoryBuilder().build(r);
-			log.debug("Sqlsession���������ɹ�");
+			log.debug("Sqlsession工厂创建成功");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class SqlSessionHelper {
 	}
 	public static SqlSession getSqlSession(){
 		session=factory.openSession();
-		log.debug("��ȡ��session����");
+		log.debug("获取了session对象");
 		return session;
 	}
 }
