@@ -108,23 +108,25 @@
                                 操作
                             </div>
                         </div>
+                        <c:forEach var="user" items="${userList}">
                         <div class="tr clearfix border-bottom-none">
                             <div class="td w20">
-                                吴文杰
+                                ${user.uId}
                             </div>
                             <div class="td w20">
-                                管理员
+                                ${user.uName}
                             </div>
                             <div class="td w20">
-                                水电费
+                                ${user.uStatus}
                             </div>
                             <div class="td w20">
-                                2016-01-10 11:54:07
+                                 ${user.createTime}
                             </div>
                             <div class="td w20">
                                 <a href="#" class="button-word2 btn_ajax_confirm">删除</a>
                             </div>
                         </div>
+                        </c:forEach>
                     </div>
                 </div>
                 <div class="show-page padding-big-right">
