@@ -62,7 +62,7 @@
                         <c:forEach var="sec_r" items="${reslist}">
                             <c:if test="${sec_r.parentId==r.rid}">
                         <li>
-                            <a href="#">
+                            <a href="${sec_r.resurl}">
                                 <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16"/></b>
                                 <span class="text-normal">${sec_r.rname}</span>
                             </a>
