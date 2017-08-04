@@ -31,6 +31,7 @@ public class GetResourcesByUserServlet extends HttpServlet {
             //获取当前登录用户所拥有的资源
             List<Resources> reslist= resourcesDao.findResourcesByUser(userInfo.getuId());
             request.setAttribute("reslist",reslist);
+
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }else{
             response.sendRedirect("index.jsp");

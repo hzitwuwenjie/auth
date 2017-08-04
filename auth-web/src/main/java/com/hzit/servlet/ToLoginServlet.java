@@ -24,7 +24,6 @@ public class ToLoginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         SqlSession sqlSession= SqlSessionHelper.getSqlSession();
         UserInfoDao userInfoDao=sqlSession.getMapper(UserInfoDao.class);
-        ResourcesDao resourcesDao=sqlSession.getMapper(ResourcesDao.class);
         UserInfo user=new UserInfo();
         String userName =request.getParameter("username");
         String userPwd=request.getParameter("password");
