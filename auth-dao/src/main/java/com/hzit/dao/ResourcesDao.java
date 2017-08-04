@@ -23,6 +23,8 @@ public interface ResourcesDao {
 
         public List<Resources> findFirstResources( );
 
+        public List<Resources> findAllResource( );
+
 
 
 
