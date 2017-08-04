@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
 <div class="view-topbar">
     <div class="topbar-console">
         <div class="tobar-head fl">
@@ -60,8 +61,9 @@
                             <c:forEach var="sec_r" items="${reslist}">
                                 <c:if test="${sec_r.parentId==r.rid}">
                                     <li>
-                                        <a href="#">
-                                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16"/></b>
+                                        <a href="${sec_r.resurl}">
+                                            <b class="sidebar-icon"><img src="Images/icon_author.png" width="16"
+                                                                         height="16"/></b>
                                             <span class="text-normal">${sec_r.rname}</span>
                                         </a>
                                     </li>
@@ -74,52 +76,63 @@
                 <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
             </c:forEach>
         </div>
-        </div>
     </div>
+
+
     <div class="view-product">
         <div class="authority">
             <div class="authority-head">
                 <div class="manage-head">
-                    <h6 class="layout padding-left manage-head-con">资源管理
+                    <h6 class="layout padding-left manage-head-con">资源管理平台与发布
                     </h6>
+                    <div class="margin-tb manage-detail-con clearfix">
+                        <a class="h5 margin-large-left custom fl" href="#">新建资源</a>
+                    </div>
+
                 </div>
             </div>
             <div class="authority-content">
                 <div class="list-content show">
                     <div class="offcial-table tr-border margin-big-top clearfix">
                         <div class="tr-th clearfix">
-                            <div class="th w20">
+                            <div class="th w10">
                                 资源名称
                             </div>
-                            <div class="th w20">
+                            <div class="th w30">
                                 资源URL
                             </div>
-                            <div class="th w20">
+                            <div class="th w25">
                                 资源描述
                             </div>
-                            <div class="th w20">
+                            <div class="th w10">
                                 资源序号
                             </div>
                             <div class="th w20">
-                                资源序号
+                                创建时间
+                            </div>
+                            <div class="th w5">
+                                操作
                             </div>
                         </div>
                         <c:forEach var="r" items="${allresource}">
                             <div class="tr clearfix border-bottom-none">
-                                <div class="td w20">
-                                   ${r.rname}
+                                <div class="td w10">
+                                        ${r.rname}
                                 </div>
-                                <div class="td w20">
+                                <div class="td w30">
                                         ${r.resurl}
                                 </div>
-                                <div class="td w20">
+                                <div class="td w25">
                                         ${r.redsdes}
                                 </div>
-                                <div class="td w20">
-                                ${r.resorderno}
+                                <div class="td w10">
+                                        ${r.resorderno}
                                 </div>
-
                                 <div class="td w20">
+                                    <a href="#" class="button-word2 btn_ajax_confirm">${r.createTime}</a>
+                                </div>
+                                <div class="td w5">
+                                    <a href="#" class="button-word2 btn_ajax_confirm">编辑</a> |
                                     <a href="#" class="button-word2 btn_ajax_confirm">删除</a>
                                 </div>
                             </div>

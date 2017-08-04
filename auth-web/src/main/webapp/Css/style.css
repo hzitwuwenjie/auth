@@ -79,7 +79,7 @@ body{font-family: 'Lantinghei SC','microsoft yahei', Tahoma, Helvetica, SimSun, 
 
 .manage-detail{border-bottom:1px dashed #959595;margin:0 20px;padding: 20px 10px;}
 .manage-detail h6{color:#098cba;line-height:26px;}
-.manage-detail-con{height:30px;}
+.manage-detail-con{height:30px; margin-top: 20px;}
 .manage-detail-con span{display:block;margin-right:45px;margin-top:7px;}
 .manage-detail-con span em{font-style:normal;color:#ea544a;line-height:22px;}
 .manage-detail-con .recharge{width:80px;height:30px;background:#ea544a;text-align:center;line-height:30px;color:#fff;display:block;border-radius:3px;}
