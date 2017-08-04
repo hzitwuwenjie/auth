@@ -77,13 +77,18 @@ public class TestUserInfo {
 */
 
         // 删除用户
-/*            int i=userInfoDao.deleteUser(3);
-            if (i==1){
-                sqlSession.commit();
-                System.out.println("删除成功");
-            }else {
+/*            int i=userInfoDao.deleteUserRole(2);
+            if (i<=0){
                 sqlSession.rollback();
-                System.out.println("删除失败");
+            }else{
+                 i=userInfoDao.deleteUser(2);
+                if (i==1){
+                    sqlSession.commit();
+                    System.out.println("删除成功");
+                }else {
+                    sqlSession.rollback();
+                    System.out.println("删除失败");
+                }
             }*/
     }
 }

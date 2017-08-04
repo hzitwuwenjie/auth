@@ -130,7 +130,7 @@
                                  ${user.createTime}
                             </div>
                             <div class="td w20">
-                                <a href="#" class="button-word2 btn_ajax_confirm">删除</a>
+                                <a href="deleteUserById?userId=${user.uid}" class="button-word2 btn_ajax_confirm">删除</a>
                             </div>
                         </div>
                         </c:forEach>

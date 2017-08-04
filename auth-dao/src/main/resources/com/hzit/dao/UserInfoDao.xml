@@ -51,4 +51,7 @@
     <delete id="deleteUser" parameterType="java.lang.Integer" >
         DELETE from userinfo WHERE uid=#{userId}
     </delete>
+    <delete id="deleteUserRole" parameterType="java.lang.Integer">
+         DELETE FROM  urinfo WHERE uid=#{userId};
+    </delete>
 </mapper>

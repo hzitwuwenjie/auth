@@ -15,4 +15,5 @@ public interface UserInfoDao {
     List<UserInfo> findAllUserByPage(Integer startRow,Integer count);
     List<UserInfoVo> findAllUser();
     UserInfo findUserById(UserInfo userInfo);
+    int deleteUserRole(Integer userId);
 }
