@@ -111,13 +111,20 @@
                         <c:forEach var="user" items="${userList}">
                         <div class="tr clearfix border-bottom-none">
                             <div class="td w20">
-                                ${user.uId}
+                                ${user.uname}
                             </div>
+                            <c:if test="${user.rname==null}">
+                                <div class="td w20">
+                                        无
+                                </div>
+                            </c:if>
+                            <c:if test="${user.rname!=null}">
+                                <div class="td w20">
+                                        ${user.rname}
+                                </div>
+                            </c:if>
                             <div class="td w20">
-                                ${user.uName}
-                            </div>
-                            <div class="td w20">
-                                ${user.uStatus}
+                                ${user.ustatus}
                             </div>
                             <div class="td w20">
                                  ${user.createTime}

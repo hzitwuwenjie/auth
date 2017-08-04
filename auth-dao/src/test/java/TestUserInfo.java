@@ -1,6 +1,7 @@
 import com.hzit.dao.UserInfoDao;
 import com.hzit.entity.UserInfo;
 import com.hzit.util.SqlSessionHelper;
+import com.hzit.vo.UserInfoVo;
 import org.apache.ibatis.session.SqlSession;
 
 import java.text.SimpleDateFormat;
@@ -21,8 +22,8 @@ public class TestUserInfo {
                 System.out.println(user.toString());
             }
     */
-        List<UserInfo> userInfoList=userInfoDao.findAllUser();
-        for(UserInfo user : userInfoList){
+        List<UserInfoVo> userInfoList=userInfoDao.findAllUser();
+        for(UserInfoVo user : userInfoList){
             System.out.println(user.toString());
         }
         // 根据用户Id来查找单用户

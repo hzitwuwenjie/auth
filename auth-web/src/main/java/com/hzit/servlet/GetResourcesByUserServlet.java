@@ -5,6 +5,7 @@ import com.hzit.dao.UserInfoDao;
 import com.hzit.entity.Resources;
 import com.hzit.entity.UserInfo;
 import com.hzit.util.SqlSessionHelper;
+import com.hzit.vo.UserInfoVo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +34,7 @@ public class GetResourcesByUserServlet extends HttpServlet {
             //获取当前登录用户所拥有的资源
             List<Resources> reslist= resourcesDao.findResourcesByUser(userInfo.getuId());
             request.getSession().setAttribute("reslist", reslist);
-            List<UserInfo> userList=userInfoDao.findAllUser();
+            List<UserInfoVo> userList=userInfoDao.findAllUser();
             request.setAttribute("userList",userList);
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }else{
