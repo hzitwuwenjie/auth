@@ -32,12 +32,8 @@ public class ToLoginServlet extends HttpServlet {
         user.setuPass(userPwd);
         UserInfo userInfo=userInfoDao.findUserById(user);
         if(userInfo !=null){
-            //获取当前登录用户所拥有的资源
-            List<Resources> reslist= resourcesDao.findResourcesByUser(userInfo.getuId());
-
             request.getSession().setAttribute("user",userInfo);
-            request.getSession().setAttribute("reslist",reslist);
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("getResourcesByUser");
         }else{
             response.sendRedirect("login.html");
         }
