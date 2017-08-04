@@ -14,4 +14,7 @@ WHERE rid IN (SELECT resourceid FROM `roleresource` WHERE roleid IN (SELECT  rid
     <select id="findFirstResources" parameterType="com.hzit.entity.Resources">
       SELECT * FROM resourcces WHERE parentId is NULL
     </select>
+    <select id="findAllResource" resultType="com.hzit.entity.Resources">
+        SELECT * FROM resourcces
+    </select>
 </mapper>
