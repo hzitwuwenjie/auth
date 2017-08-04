@@ -1,6 +1,7 @@
 package com.hzit.dao;
 
 import com.hzit.entity.UserInfo;
+import com.hzit.vo.UserInfoVo;
 
 import java.util.List;
 
@@ -12,6 +13,6 @@ public interface UserInfoDao {
     int updateUser(UserInfo userInfo);
     int deleteUser(Integer userId);
     List<UserInfo> findAllUserByPage(Integer startRow,Integer count);
-    List<UserInfo> findAllUser();
+    List<UserInfoVo> findAllUser();
     UserInfo findUserById(UserInfo userInfo);
 }

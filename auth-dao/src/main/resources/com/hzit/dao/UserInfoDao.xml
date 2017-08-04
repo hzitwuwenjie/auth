@@ -23,8 +23,9 @@
     <select id="findAllUserByPage" resultMap="userInfoMap" parameterType="java.lang.Integer">
         SELECT * from userInfo limit #{0},#{1}
     </select>
-    <select id="findAllUser" resultMap="userInfoMap">
-        SELECT * from userInfo
+    <select id="findAllUser" resultType="com.hzit.vo.UserInfoVo">
+            SELECT userinfo.*,roleinfo.`rname` FROM userinfo LEFT JOIN urinfo ON userinfo.`uid`=urinfo.`uid`
+			LEFT JOIN roleinfo ON roleinfo.`rid`=urinfo.`rid`
     </select>
     <insert id="addUser" parameterType="UserInfo" >
         INSERT INTO userInfo VALUES (#{uId},#{uName},#{uPass},#{uStatus},sysdate())
