@@ -12,5 +12,6 @@ public interface UserInfoDao {
     int updateUser(UserInfo userInfo);
     int deleteUser(Integer userId);
     List<UserInfo> findAllUserByPage(Integer startRow,Integer count);
+    List<UserInfo> findAllUser();
     UserInfo findUserById(UserInfo userInfo);
 }

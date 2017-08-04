@@ -15,12 +15,16 @@ public class TestUserInfo {
         SqlSession sqlSession= SqlSessionHelper.getSqlSession();
         UserInfoDao userInfoDao=sqlSession.getMapper(UserInfoDao.class);
         // 查询所有用户
-
+/*
             List<UserInfo> userInfoList=userInfoDao.findAllUserByPage(1, 1);
             for(UserInfo user : userInfoList){
                 System.out.println(user.toString());
             }
-
+    */
+        List<UserInfo> userInfoList=userInfoDao.findAllUser();
+        for(UserInfo user : userInfoList){
+            System.out.println(user.toString());
+        }
         // 根据用户Id来查找单用户
         /*
             UserInfo user=new UserInfo();

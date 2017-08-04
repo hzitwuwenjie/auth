@@ -23,6 +23,9 @@
     <select id="findAllUserByPage" resultMap="userInfoMap" parameterType="java.lang.Integer">
         SELECT * from userInfo limit #{0},#{1}
     </select>
+    <select id="findAllUser" resultMap="userInfoMap">
+        SELECT * from userInfo
+    </select>
     <insert id="addUser" parameterType="UserInfo" >
         INSERT INTO userInfo VALUES (#{uId},#{uName},#{uPass},#{uStatus},sysdate())
     </insert>
