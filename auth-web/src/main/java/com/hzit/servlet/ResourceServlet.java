@@ -17,11 +17,13 @@ import java.util.List;
  */
 @WebServlet(name = "ResourceServlet",value = "/resourcelist")
 public class ResourceServlet extends HttpServlet {
-    ResourcesDao resourcesDao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+    ResourcesDao resourcesDao;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        resourcesDao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
             List<Resources> allresource=resourcesDao.findAllResource();
-            request.setAttribute("allresource",allresource);
+            SqlSessionHelper.closeSession();
+            request.setAttribute("allresource", allresource);
             request.getRequestDispatcher("resource.jsp").forward(request,response);
     }
 
