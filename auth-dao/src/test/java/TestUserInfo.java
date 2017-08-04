@@ -72,13 +72,13 @@ public class TestUserInfo {
 */
 
         // 删除用户
-            int i=userInfoDao.deleteUser(3);
+/*            int i=userInfoDao.deleteUser(3);
             if (i==1){
                 sqlSession.commit();
                 System.out.println("删除成功");
             }else {
                 sqlSession.rollback();
                 System.out.println("删除失败");
-            }
+            }*/
     }
 }
